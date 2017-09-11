@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fetch</title>
+</head>
+<body>
+	<div id="img">
+		<img src="" alt="">
+	</div>	
+	<script type="text/javascript">
+		var myImage = document.querySelector('img');
+
+		fetch('flowers.jpg').then(function(response) {
+		  return response.blob();
+		}).then(function(myBlob) {
+		  var objectURL = URL.createObjectURL(myBlob);
+		  myImage.src = objectURL;
+		});
+	</script>
+</body>
+</html>
